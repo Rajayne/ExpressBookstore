@@ -29,3 +29,9 @@ afterEach(async function () {
 afterAll(async function () {
   await db.end();
 });
+
+describe("Test beforeEach", () => {
+  test("Create testBook", () => {
+    expect(1).toBe(1);
+  });
+});
