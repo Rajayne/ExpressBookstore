@@ -14,3 +14,9 @@ Adding validation for book objects which should look like:
   "year": 2017
 }
 ```
+
+# Part One
+
+1. Create database and run data.sql
+2. Use JSONSchema to validate creating/updating books
+3. Display validation errors if routes fail

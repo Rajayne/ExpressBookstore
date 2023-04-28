@@ -1,13 +1,10 @@
 /** Common config for bookstore. */
+const { user, password } = require("../dbPassword");
 
-
-let DB_URI = `postgresql://`;
-
-if (process.env.NODE_ENV === "test") {
-  DB_URI = `${DB_URI}/books-test`;
-} else {
-  DB_URI = process.env.DATABASE_URL || `${DB_URI}/books`;
-}
-
+let base = `postgresql://`;
+let DB_URI =
+  process.env.NODE_ENV === "test"
+    ? `${base}${user}:${password}@localhost:5432/books_test`
+    : `${base}${user}:${password}@localhost:5432/books`;
 
 module.exports = { DB_URI };
